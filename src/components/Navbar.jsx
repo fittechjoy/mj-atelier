@@ -1,36 +1,38 @@
+
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Experiences", href: "#experiences" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Partner", href: "#partners" },
+  { label: "Contact", href: "#contact" },
+];
+
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full flex items-center justify-between px-12 py-6 bg-black/20 backdrop-blur-md" >
-     <div className="leading-none">
-  <h1 className="text-3xl font-bold tracking-widest">
-    MJ
-  </h1>
+    <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between bg-black/20 px-6 py-6 text-[#f7f1e7] backdrop-blur-md md:px-12">
+      {/* Logo */}
+      <a href="#home" className="leading-none" aria-label="MJ Atelier home">
+        <h1 className="font-serif text-3xl font-normal tracking-widest">
+          MJ
+        </h1>
 
-  <p className="text-xs tracking-[6px] text-[#C8A24C] uppercase mt-1">
-    Atelier
-  </p>
-</div>
+        <p className="mt-1 text-xs uppercase tracking-[6px] text-[#C8A24C]">
+          Atelier
+        </p>
+      </a>
 
-      <ul className="hidden md:flex gap-10 text-sm uppercase tracking-widest">
-        <li className="cursor-pointer hover:text-yellow-400 transition">
-          About
-        </li>
-
-        <li className="cursor-pointer hover:text-yellow-400 transition">
-          Experiences
-        </li>
-
-        <li className="cursor-pointer hover:text-yellow-400 transition">
-          Gallery
-        </li>
-
-        <li className="cursor-pointer hover:text-yellow-400 transition">
-          Partner
-        </li>
-
-        <li className="cursor-pointer hover:text-yellow-400 transition">
-          Contact
-        </li>
+      {/* Navigation links */}
+      <ul className="hidden items-center gap-10 text-sm uppercase tracking-widest md:flex">
+        {navLinks.map((link) => (
+          <li key={link.href}>
+            <a
+              href={link.href}
+              className="transition-colors duration-300 hover:text-[#C8A24C]"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
