@@ -3,7 +3,6 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Experiences", href: "#experiences" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Partner", href: "#partners" },
   { label: "Contact", href: "#contact" },
 ];
 
